@@ -1,8 +1,10 @@
-import { StyleSheet, View, Button, FlatList } from "react-native";
+import { StyleSheet, Button, FlatList } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+import LayoutHeader from "./src/components/LayoutHeader";
 import Screen1 from "./src/screens/Screen1";
 import Screen2 from "./src/screens/Screen2";
 import Screen3 from "./src/screens/Screen3";
@@ -76,13 +78,18 @@ export default function App() {
   };
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="screen">
-        <Stack.Screen name="screen" component={TabNavigations} />
-        <Stack.Screen name="მოძებნა" component={Screen3} />
-        <Stack.Screen name="ავტორიზაცია" component={Screen4} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="screen"
+          screenOptions={({ navigation }) => ({ header: () => LayoutHeader(navigation) })}
+        >
+          <Stack.Screen name="mainScreens" component={TabNavigations} />
+          <Stack.Screen name="მოძებნა" component={Screen3} />
+          <Stack.Screen name="ავტორიზაცია" component={Screen4} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 
