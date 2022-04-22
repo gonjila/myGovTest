@@ -36,7 +36,7 @@ export const MainRoutes = () => {
       })}
     >
       <Stack.Screen name="ფავორიტები" component={Favourites} />
-      <Stack.Screen name="ყველა" component={Everything} />
+      <Stack.Screen name="ყველა" component={Everything} initialParams={{ itemId: 36 }} />
       <Stack.Screen name="ძირითადი" component={Main} />
       <Stack.Screen name="ქონება" component={Property} />
       <Stack.Screen name="სოციალური" component={Social} />

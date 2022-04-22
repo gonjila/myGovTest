@@ -22,7 +22,7 @@ const LayoutHeader = (navigation) => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate("ავტორიზაცია")}
+            onPress={() => navigation.navigate("მომხმარებელი")}
             style={[tw`w-8 bg-white rounded-full justify-center items-center`]}
           >
             <Ionicons name="person-circle-outline" size={32} />

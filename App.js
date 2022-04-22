@@ -6,8 +6,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import LayoutHeader from "./src/components/LayoutHeader";
 import { TabNavigations } from "./src/navigations/TabNavigations";
-import Screen3 from "./src/screens/Screen3";
-import Screen4 from "./src/screens/Screen4";
+import Profile from "./src/screens/Profile";
+import Search from "./src/screens/Search";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,8 +22,12 @@ export default function App() {
           }}
         >
           <Stack.Screen name="mainScreens" component={TabNavigations} />
-          <Stack.Screen name="მოძებნა" component={Screen3} />
-          <Stack.Screen name="ავტორიზაცია" component={Screen4} />
+          <Stack.Screen name="მოძებნა" component={Search} />
+          <Stack.Screen
+            name="მომხმარებელი"
+            component={Profile}
+            options={{ headerBackTitleVisible: false }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
