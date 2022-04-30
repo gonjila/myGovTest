@@ -11,6 +11,8 @@ import { TabNavigations } from "./src/navigations/TabNavigations";
 import Profile from "./src/screens/Profile";
 import Search from "./src/screens/Search";
 
+import Help from "./src/components/Help";
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -59,6 +61,8 @@ export default function App() {
           />
         </Stack.Navigator>
       </NavigationContainer>
+
+      <Help />
     </SafeAreaProvider>
   );
 }

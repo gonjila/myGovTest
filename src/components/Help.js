@@ -6,7 +6,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 const Questions = () => {
   const [show, setShow] = useState(false);
   return (
-    <View style={tw`absolute bottom-4 right-4 items-end`}>
+    <View style={tw`absolute bottom-24 right-4 items-end`}>
       <View style={show ? tw`w-60 h-24 px-5 py-4 bg-black justify-around` : { display: "none" }}>
         <Pressable onPress={() => alert("Questions")}>
           <View style={tw`flex-row items-center`}>
