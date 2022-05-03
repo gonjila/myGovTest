@@ -4,7 +4,7 @@ import tw from "twrnc";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const SearchDebtors = () => {
-  const [modalVisible, setModalVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -21,12 +21,20 @@ const SearchDebtors = () => {
       სააღსრულებო_საქმის_N: "A1800000000",
     },
     {
-      მოვალე: "ჯუბა",
+      მოვალე: "ჯუმბერი",
       პირადი_ნომერი: "565445321",
-      მისამართი: "ქ. თბილისი",
+      მისამართი: "ქ. ქუთეისი",
       რეგისტრაციის_თარიღი: "18.11.2022 11:28:31",
       აღმასრულებლის_ვინაობა: "000000501",
       სააღსრულებო_საქმის_N: "A1800031000",
+    },
+    {
+      მოვალე: "ჯემალი",
+      პირადი_ნომერი: "565445321",
+      მისამართი: "ქ. თელავი",
+      რეგისტრაციის_თარიღი: "18.11.2022 11:28:31",
+      აღმასრულებლის_ვინაობა: "000120501",
+      სააღსრულებო_საქმის_N: "A1940031000",
     },
   ];
 
@@ -88,7 +96,7 @@ const SearchDebtors = () => {
         <View style={tw`p-4 mt-33 bg-gray-100 border-t border-t-gray-200 flex-1`}>
           <View style={tw`ml-2 flex-row items-center justify-between`}>
             <Text>
-              სულ <Text style={tw`text-blue-500`}>3</Text> ჩანაწერი
+              სულ <Text style={tw`text-blue-500`}>{data.length}</Text> ჩანაწერი
             </Text>
             <Pressable onPress={() => setModalVisible(false)}>
               <Ionicons name="refresh" size={22} />

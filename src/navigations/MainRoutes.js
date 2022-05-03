@@ -12,6 +12,7 @@ import {
   Social,
   SearchDebtors,
 } from "../components/main-components";
+import NotariesRegister from "../components/main-components/NotariesRegister";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,11 +39,11 @@ export const MainRoutes = () => {
     />
   );
 
-  const serviceScreenHeader = (navigation) => (
+  const serviceScreenHeader = ({ navigation, title }) => (
     <View style={tw`h-12 border-b border-b-gray-200 flex-row items-center justify-between`}>
       <Pressable onPress={() => navigation.navigate("ყველა")} style={tw`ml-4 flex-row items-center`}>
         <Ionicons name="chevron-back" size={22} />
-        <Text style={tw`text-xs ml-2`}>ძებნა მოვალეთა რეესტრში</Text>
+        <Text style={tw`text-xs ml-2`}>{title}</Text>
       </Pressable>
 
       <View style={tw`mr-4 flex-row items-center`}>
@@ -76,7 +77,16 @@ export const MainRoutes = () => {
         name="მოვალეები"
         component={SearchDebtors}
         options={{
-          header: ({ navigation }) => serviceScreenHeader(navigation),
+          header: ({ navigation }) =>
+            serviceScreenHeader({ navigation, title: "ძებნა მოვალეთა რეესტრში" }),
+        }}
+      />
+      <Stack.Screen
+        name="ნოტარიუსთა_რეესტრი"
+        component={NotariesRegister}
+        options={{
+          header: ({ navigation }) =>
+            serviceScreenHeader({ navigation, title: "ნოტარიუსთა ელექტრონული რეესტრი" }),
         }}
       />
     </Stack.Navigator>

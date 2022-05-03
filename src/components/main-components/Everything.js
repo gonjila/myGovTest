@@ -20,7 +20,11 @@ const Everything = ({ route, navigation }) => {
           iconName="arch"
           navigate={() => navigation.navigate("მოვალეები")}
         />
-        <VerticalListItem text="ნოტარიუსთა ელექტრონული რეესტრი" iconName="arch" navigate="" />
+        <VerticalListItem
+          text="ნოტარიუსთა ელექტრონული რეესტრი"
+          iconName="arch"
+          navigate={() => navigation.navigate("ნოტარიუსთა_რეესტრი")}
+        />
         <VerticalListItem text="პარკირების ჯარიმები" iconName="arch" navigate="" />
         <VerticalListItem text="ელექტრონული დოკუმენტის მიწოდება" iconName="arch" navigate="" />
         <VerticalListItem text="სოციალური სარეიტინგო ქულა" iconName="arch" navigate="" />
